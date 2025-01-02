@@ -2,9 +2,13 @@
   "name": "react-lean-sdk",
   "version": "1.0.0",
   "description": "Lean sdk for reactJs",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "type": "module",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c --bundleConfigAsCjs"
   },
   "author": "Damilare Protocol",
   "license": "ISC",
@@ -12,10 +16,19 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.2",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
     "rollup": "^4.29.1",
+    "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.7.2"
